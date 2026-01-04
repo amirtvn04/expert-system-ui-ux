@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'bakh-bold';
+    src: url('./fonts/bakh-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bakh-regular';
+    src: url('./fonts/bakh-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-bakh-bold {
+    font-family: bakh-bold !important;
+}
+
+.font-bakh-regular {
+    font-family: bakh-regular !important;
+}
