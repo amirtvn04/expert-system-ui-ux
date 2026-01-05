@@ -8,7 +8,7 @@ function Header() {
             <span className="font-bakh-bold">سیستم خبره تحلیل UI/UX صفحه لندینگ</span>
           </h1>
           <p className="text-blue-200 mt-2 text-sm">
-            تحلیل هوشمند کیفیت CTA با استفاده از قوانین خبره و Certainty Factor
+            تحلیل هوشمند کیفیت CTA با استفاده از قوانین خبره
           </p>
         </div>
       </header>
