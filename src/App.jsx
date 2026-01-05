@@ -7,26 +7,11 @@ import { useState } from "react"
 function App() {
   const [result, setResult] = useState(null)
 
-  const sendRequest = async () => {
-    const data = {
-      "cta_position_y": 900,
-      "cta_width": 150,
-      "cta_height": 40,
-      "contrast_ratio": 2.5,
-      "whitespace_around_cta": 20,
-      "scroll_depth": 30,
-      "cta_click_rate": 1.5,
-      "number_of_ctas": 3,
-      "cta_text_length": 30,
-      "time_to_cta": 15,
-      "clickable_elements_before_cta": 8,
-      "content_word_count": 500,
-      "similar_color_elements": 4,
-      "largest_other_element_size": 15000,
-      "cta_mobile_width": 160,
-      "cta_mobile_height": 40,
-      "has_loading_animation": 0
-    };
+  const sendRequest = async (data) => {
+    const payload = data.reduce((acc, item) => {
+      acc[item.id] = Number(item.value);
+      return acc;
+    }, {});
 
     try {
       const response = await fetch("http://127.0.0.1:8000/api/analyze", {
@@ -35,7 +20,7 @@ function App() {
           "Accept": "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
 
       const result_ = await response.json();
@@ -48,7 +33,6 @@ function App() {
   const onResult = (r) => {
     setResult(r)
   }
-  console.log("Response from API:", result);
 
   return (
     <>
