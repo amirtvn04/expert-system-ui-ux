@@ -1,17 +1,32 @@
 import EmptyState from './EmptyState'
 import ResultContent from './ResultContent'
 
-function ResultPanel({ data }) {
-  const hasData = Boolean(data);
+function ResultPanel({ data, loading, error }) {
 
   return (
     <div
       className={`
-        bg-white p-6 rounded-xl border border-black/10
-        ${hasData ? "" : "flex items-center justify-center"}
+        bg-white p-6 rounded-xl border border-black/10 
+        ${(!error && !loading && data) ? "animate-fadeIn" : ""} 
+        ${data ? "" : "flex items-center justify-center "}
       `}
     >
-      {hasData ? <ResultContent data={data} /> : <EmptyState />}
+     {loading && (
+        <EmptyState label={"⏳ در حال تحلیل داده‌ها..."} />
+     )}
+
+     {error && (
+        <EmptyState label={error} />
+     )}
+
+     {!error && !loading && !data && (
+        <EmptyState label={"مقادیر را وارد کرده و دکمه تحلیل را بزنید"} />
+     )}
+
+     {!error && !loading && data && (
+        <ResultContent data={data} />
+     )}
+      
     </div>
   );
 }

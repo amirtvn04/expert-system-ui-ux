@@ -2,7 +2,7 @@ import Button from './elements/Button';
 import Input from './elements/Input'
 import { useState } from 'react';
 
-function InputPanel({ sendReq, resetAll }) {
+function InputPanel({ sendReq, resetAll, loading }) {
     const initialData = [
         { label: "موقعیت CTA (پیکسل از بالا)", id: "cta_position_y", value: 500 },
         { label: "عرض CTA (پیکسل)", id: "cta_width", value: 200 },
@@ -59,7 +59,7 @@ function InputPanel({ sendReq, resetAll }) {
                 </div>
 
                 <div className="flex flex-col md:flex-row gap-4">
-                    <Button label="تحلیل و تولید پیشنهادات" type="search" className='w-full md:flex-7' onClick={() => sendReq(data)}/>
+                    <Button label= {!loading ? "تحلیل و تولید پیشنهادات" : "در حال تحلیل..."} type="search" className='w-full md:flex-7' onClick={() => sendReq(data)} disabled={loading}/>
                     <Button label="بازنشانی" type="reset" className='w-full md:flex-3' onClick={() => {resetData(); resetAll()}}/>
                 </div>
             </div>
