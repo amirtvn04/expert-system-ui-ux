@@ -31,8 +31,9 @@ An intelligent system that automatically analyzes your landing page's Call-to-Ac
 
 ### 📸 Screenshots
 
-![Dashboard](./screenshots/dashboard.png)
-![Analysis Results](./screenshots/results.png)
+![Dashboard](./screenshots/1.png)
+![Results](./screenshots/2.png)
+![Results](./screenshots/3.png)
 
 ### 🛠️ Tech Stack
 
