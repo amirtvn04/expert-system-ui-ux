@@ -17,6 +17,9 @@
 
 An intelligent system that automatically analyzes your landing page's Call-to-Action (CTA) elements and provides actionable optimization suggestions. Built with **Forward Chaining** algorithm and **14 expert rules** based on industry standards.
 
+**Live Demo:** <a href="https://uixpert.vercel.app/" target="_blank">uixpert</a>                                                       
+**API Docs:** <a href="https://uixpert.onrender.com/docs" target="_blank">uixpert.api/docs</a>
+
 ### ✨ Features
 
 - 🎯 **14 Expert Rules** - Based on WCAG, Nielsen Norman, Material Design
@@ -180,6 +183,10 @@ Output: ❌ Visibility: 35/100, Clickability: 40/100
 ### 🚀 این پروژه چیست؟
 
 یک سیستم خبره هوشمند که به صورت خودکار عناصر Call-to-Action صفحه لندینگ شما را تحلیل کرده و پیشنهادات بهینه‌سازی ارائه می‌دهد. ساخته شده با الگوریتم **Forward Chaining** و **14 قانون تخصصی**.
+
+**دمو زنده:** <a href="https://uixpert.vercel.app/" target="_blank">uixpert</a>                                           
+**مستندات(API) :** <a href="https://uixpert.onrender.com/docs" target="_blank">uixpert.api/docs</a>
+
 ### ✨ ویژگی‌ها
 
 - 🎯 **14 قانون تخصصی** - بر اساس استانداردهای WCAG، Nielsen Norman، Material Design
