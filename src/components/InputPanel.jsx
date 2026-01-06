@@ -1,7 +1,8 @@
+import Button from './elements/Button';
 import Input from './elements/Input'
 import { useState } from 'react';
 
-function InputPanel({ sendReq }) {
+function InputPanel({ sendReq, resetAll }) {
     const initialData = [
         { label: "موقعیت CTA (پیکسل از بالا)", id: "cta_position_y", value: 500 },
         { label: "عرض CTA (پیکسل)", id: "cta_width", value: 200 },
@@ -52,21 +53,14 @@ function InputPanel({ sendReq }) {
                     </div>
 
                     <div className='bg-blue-50 border-blue-300 border-2 rounded-lg px-6 py-4 flex items-center gap-x-2 mt-6'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lightbulb size-5 text-blue-600 flex-shrink-0 mt-0.5"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lightbulb size-5 text-blue-600 mt-0.5"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>
                         <p className='text-blue-800'> همه ورودی‌ها عددی هستند؛ سیستم آن‌ها را به دانش کیفی تبدیل می‌کند</p>
                     </div>
                 </div>
 
-                <div className="flex gap-3">
-                    <button onClick={() => sendReq(data)} className='flex items-center justify-center gap-2 text-xl bg-green-600 w-[70%] px-5 py-3 rounded-lg font-bakh-bold text-white hover:bg-green-700 transition-colors cursor-pointer'>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                        </svg>
-                        تحلیل و تولید پیشنهادات</button>
-                    <button onClick={() => resetData()} className='flex items-center justify-center gap-2 text-xl border border-blue-300 text-blue-800 w-[30%] px-5 py-3 rounded-lg cursor-pointer hover:bg-blue-100 transition-colors'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-rotate-ccw size-5" data-fg-d3bl24="0.8:11.4884:/src/app/App.tsx:159:17:4001:32:e:RotateCcw::::::FLu"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
-                        بازنشانی
-                    </button>
+                <div className="flex flex-col md:flex-row gap-4">
+                    <Button label="تحلیل و تولید پیشنهادات" type="search" className='w-full md:flex-7' onClick={() => sendReq(data)}/>
+                    <Button label="بازنشانی" type="reset" className='w-full md:flex-3' onClick={() => {resetData(); resetAll()}}/>
                 </div>
             </div>
         </>

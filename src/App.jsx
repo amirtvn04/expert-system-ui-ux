@@ -1,4 +1,4 @@
-import Header from "./components/header"
+import Header from "./components/Header"
 import Footer from "./components/Footer"
 import InputPanel from "./components/InputPanel"
 import ResultPanel from "./components/ResultPanel"
@@ -34,13 +34,17 @@ function App() {
     setResult(r)
   }
 
+  const resetAll = () => {
+    setResult(null)
+  }
+
   return (
     <>
       <Header />
 
       <main className="max-w-300 mx-auto px-6 py-8">
-        <div className="grid grid-cols-2 gap-6 mb-9">
-          <InputPanel sendReq={sendRequest} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-9">
+          <InputPanel sendReq={sendRequest} resetAll={resetAll} />
 
           <ResultPanel data={result} />
         </div>

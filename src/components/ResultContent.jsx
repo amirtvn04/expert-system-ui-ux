@@ -24,7 +24,7 @@ function ResultContent({ data }) {
 
             <h5 className="text-sm font-bakh-bold mt-7 mb-2">مسیر استدلال و قوانین فعال‌شده:</h5>
 
-            <pre className="rounded-xl border border-black/10 bg-gray-50 p-3 whitespace-pre-wrap font-mono text-sm">
+            <pre className="rounded-xl border border-black/10 bg-gray-50 p-3 whitespace-pre-wrap font-mono text-sm overflow-auto max-h-150">
                 {data.detailed_explanation}
             </pre>
         </>
